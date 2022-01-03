@@ -1,0 +1,30 @@
+@media (max-width: 1024px) {
+  .container {
+    width: 100%;
+    align-items: center;
+  }
+  .searchbox {
+    display: flex;
+    margin-left: 0 auto;
+    width: 100%;
+  }
+  .searchbar {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+    appearance: none;
+    border: none;
+    background: none;
+    outline: none;
+
+    background-color: rgba(182, 27, 27, 0.5);
+    border-radius: 0 0 16px 16px;
+    padding: 10px;
+
+    box-shadow: 0 5px rgba(0, 0, 0, 0.2);
+    font-size: 18px;
+
+    transition: 0.4 ease;
+  }
+}
