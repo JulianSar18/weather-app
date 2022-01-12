@@ -1,26 +1,28 @@
-import { useState, useEffect } from "react";
+import { useContext, useState } from "react";
 import styles from "../components/styles/Search.module.css";
-const api = {
-  key: "834d904ec0e6c4cef528f7452845e5bc",
-  base: "http://api.openweathermap.org/data/2.5/",
-};
+import weatherStates from "../reducer/Weather_states";
+import getWeather from "../services/getWeather";
+import { ContextWeather } from "../context/weatherContext";
+import Locations from "./Locations";
+
 const Search = () => {
   const [query, setQuery] = useState("");
-  const [weather, setWeather] = useState({});
-  const search = (evt) => {
+  const { weather, setWeather } = useContext(ContextWeather);
+
+  const search = async (evt) => {
     if (evt.key === "Enter") {
-      fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
-        .then((res) => res.json())
-        .then((result) => {
-          setWeather(result);
-          setQuery("");
-          console.log(result);
-        });
+       setWeather( await getWeather(query));
     }
   };
+  
   return (
-    <div className={(typeof weather.main != 'undefined') ? (weather.weather[0].main === "Rain") ? `${styles.rain}` : `${styles.clear}` : 
-    `${styles.clear}` }>
+    <div
+      className={
+        typeof weather.main != "undefined"
+          ? weatherStates(weather.weather[0].main)
+          : `${styles.clear}`
+      }
+    >
       <main>
         <div className={styles.container}>
           <div className={styles.searchbox}>
@@ -33,30 +35,7 @@ const Search = () => {
               onKeyPress={search}
             />
           </div>
-          <div>
-            {typeof weather.main != "undefined" ? (
-              <div className={styles.container_lctbx}>
-                <div className={styles.location_box}>
-                  <div className={styles.location}>
-                    {weather.name}, {weather.sys.country}
-                  </div>
-                  <div className={styles.date}>
-                    {new Date(
-                      weather.dt * 1000 + weather.timezone * 1000
-                    ).toUTCString()}
-                  </div>
-                </div>
-                <div className={styles.weather_box}>
-                  <div className={styles.temp}>{weather.main.temp}°C</div>
-                  <div className={styles.weather}>
-                    {weather.weather[0].main}
-                  </div>
-                </div>
-              </div>
-            ) : (
-              ""
-            )}
-          </div>
+          <Locations/>
         </div>
       </main>
     </div>

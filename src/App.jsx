@@ -1,13 +1,12 @@
 import React from "react";
-import Locations from "./components/Locations";
+import WeatherProvider from "./context/weatherContext";
 import Search from "./components/Search";
 
 const App = () => {
-  
   return (
-    <div>
-    <Search/>
-    </div>
+    <WeatherProvider>
+      <Search />
+    </WeatherProvider>
   );
 };
 
