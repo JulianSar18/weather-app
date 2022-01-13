@@ -2,13 +2,11 @@ import React from "react";
 import { useContext } from "react";
 import styles from "../components/styles/Locations.module.css";
 import { ContextWeather } from "../context/weatherContext";
+import parseDate from "../services/parseDate";
 import "./Search";
 
 const Locations = () => {
   const { weather } = useContext(ContextWeather);
-  const date = new Date(
-    weather.dt * 1000 + weather.timezone * 1000
-  ).toUTCString();
   return (
     <div>
       {typeof weather.main != "undefined" ? (
@@ -17,7 +15,7 @@ const Locations = () => {
             <div className={styles.location}>
               {weather.name}, {weather.sys.country}
             </div>
-            <div className={styles.date}>{date}</div>
+            <div className={styles.date}>{parseDate(weather).toUTCString()}</div>
           </div>
           <div className={styles.weather_box}>
             <div className={styles.temp}>{weather.main.temp}°C</div>

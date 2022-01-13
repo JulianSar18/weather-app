@@ -4,6 +4,7 @@ import weatherStates from "../reducer/Weather_states";
 import getWeather from "../services/getWeather";
 import { ContextWeather } from "../context/weatherContext";
 import Locations from "./Locations";
+import parseDate from "../services/parseDate";
 
 const Search = () => {
   const [query, setQuery] = useState("");
@@ -19,7 +20,7 @@ const Search = () => {
     <div
       className={
         typeof weather.main != "undefined"
-          ? weatherStates(weather.weather[0].main)
+          ? weatherStates(weather.weather[0].main, parseDate(weather))
           : `${styles.clear}`
       }
     >
