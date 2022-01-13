@@ -1,73 +1,83 @@
-@media (max-width: 537px) {
-  .weatherCircle {
-    display: none;
+.weatherCircle {
+  display: none;
+}
+.more {
+  display: none;
+}
+.container_lctbx {
+  margin-top: 80%;
+  text-align: center;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.location_box {
+  font-size: 28px;
+  font-style: italic;
+  color: aliceblue;
+  font-weight: 300;
+  text-align: center;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.8);
+}
+.temp {
+  position: relative;
+  display: inline-block;
+  margin: 20px auto;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 15px 25px;
+  color: aliceblue;
+  font-size: 38px;
+  font-weight: 500;
+  text-shadow: 3px 6px rgba(50, 50, 70, 0.5);
+  box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
+}
+.weather {
+  color: aliceblue;
+  font-size: 32px;
+  font-weight: 600;
+  text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+}
+
+@media (min-width: 537px) {
+  .more{
+    display: block;
   }
-  .more {
-    display: none;
+  .weatherCircle {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    width: 500px;
+    height: 500px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background-image: url("src/assets/mobile_img/night.png");
+    background-size: cover;
+  }
+  .temp_web {
+    display: block;
+    position: absolute;
+    margin-left: 200px;
+    margin-top: -350px;
+    font-size: 62px;
+    font-weight: 500;
+  }
+  .temp_web p {
+    font-size: 52px;
+    font-weight: 250;
+  }
+  .container_temp_web {
+    display: inline-block;
+    position: absolute;
+    margin-left: 1300px;
+    margin-top: -400px;
+  }
+  .container_temp_web li {
+    list-style: none;
+    margin-bottom: 20px;
   }
   .container_lctbx {
-    margin-top: 80%;
-    text-align: center;
-    overflow-x: hidden;
-    overflow-y: hidden;
+    display: none;
   }
-  .location_box {
-    font-size: 28px;
-    font-style: italic;
-    color: aliceblue;
-    font-weight: 300;
-    text-align: center;
-    text-shadow: 2px 2px rgba(0, 0, 0, 0.8);
-  }
-  .temp {
-    position: relative;
-    display: inline-block;
-    margin: 20px auto;
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 16px;
-    padding: 15px 25px;
-    color: aliceblue;
-    font-size: 38px;
-    font-weight: 500;
-    text-shadow: 3px 6px rgba(50, 50, 70, 0.5);
-    box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
-  }
-  .weather {
-    color: aliceblue;
-    font-size: 32px;
-    font-weight: 600;
-    text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
-  }
-}
-.weatherCircle {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: auto;
-  width: 500px;
-  height: 500px;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-  background-image: url("src/assets/mobile_img/night.png");
-  background-size: cover;
-}
-.temp_web {
-  position: absolute;
-  margin-left: 200px;
-  margin-top: -350px;
-  font-size: 62px;
-  font-weight: 500;
-}
-.temp_web p {
-  font-size: 52px;
-  font-weight: 250;
-}
-.container_temp_web {
-  position: absolute;
-  margin-left: 1300px;
-  margin-top: -400px;
-}
-.container_temp_web li {
-  list-style: none;
-  margin-bottom: 20px;
 }

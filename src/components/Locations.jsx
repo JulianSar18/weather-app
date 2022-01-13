@@ -12,7 +12,7 @@ const Locations = () => {
       <div className={styles.weatherCircle}></div>
       {typeof weather.main != "undefined" ? (
         <>
-        <div className={styles.more}>
+         <div className={styles.more}>
           <div className={styles.temp_web}>
             {weather.main.temp}°C
             <p><img src ={`https://flagcdn.com/48x36/${weather.sys.country.toLowerCase()}.png`} alt="Flag" /> {weather.sys.country}</p>  

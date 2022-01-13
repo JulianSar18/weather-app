@@ -8,7 +8,7 @@ function weatherStates(weatherState, date) {
     case "Snow":
       return Styles.snow;
     default:
-      return hour > 18 ? Styles.night : Styles.clear;
+      return (hour >= 18 || hour < 5) ? Styles.night : Styles.clear;
   }
 }
 
