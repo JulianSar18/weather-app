@@ -1,4 +1,4 @@
-@media (max-width: 1024px) {
+@media (max-width: 537px) {
   main {
     min-height: 100vh;
     background-image: linear-gradient(
@@ -7,30 +7,31 @@
       rgba(0, 0, 0, 0.75)
     );
     padding: 25px;
+    overflow: hidden;
   }
   .clear {
-    background-image: url("src/assets/1x/clear.png");
+    background-image: url("src/assets/mobile_img/clear.png");
     background-size: cover;
     background-position: bottom;
-    transition: 0.4 ease;
+    transition: 0.4 ease-out;
   }
   .night{
-    background-image: url("src/assets/1x/night.png");
+    background-image: url("src/assets/mobile_img/night.png");
     background-size: cover;
     background-position: bottom;
-    transition: 0.4 ease;
+    transition: 0.4 ease-out;
   }
   .rain{
-    background-image: url("src/assets/1x/rain.png");
+    background-image: url("src/assets/mobile_img/rain.png");
     background-size: cover;
     background-position: bottom;
-    transition: 0.4 ease;
+    transition: 0.4 ease-out;
   }
   .snow{
-    background-image: url("src/assets/1x/snow.png");
+    background-image: url("src/assets/mobile_img/snow.png");
     background-size: cover;
     background-position: bottom;
-    transition: 0.4 ease;
+    transition: 0.4 ease-out;
   }
   .container {
     width: 100%;
